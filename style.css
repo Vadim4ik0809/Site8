@@ -1,0 +1,702 @@
+/* Загальні стилі для сторінки */
+body {
+    font-family: Arial, sans-serif; /* Основний шрифт */
+    margin: 0; /* Прибираємо зовнішні відступи */
+    padding: 0; /* Прибираємо внутрішні відступи */
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("../images/background.jpg") no-repeat center center fixed; /* Градієнт поверх зображення */
+    background-size: cover; /* Розтягуємо зображення */
+}
+
+header h1 {
+    text-align: center; /* Вирівнюємо текст по центру */
+    color: #fff; /* Текст білого кольору */
+    margin: 20px 0; /* Відступи зверху і знизу */
+    background-color: rgba(0, 0, 0, 0.6); /* Напівпрозорий чорний фон */
+    padding: 15px; /* Трохи збільшуємо відступи */
+    border-radius: 8px; /* Робимо кути ще більш плавними */
+    transition: background-color 0.3s ease; /* Анімація зміни фону */
+}
+
+/* Стилі для вакансій */
+.job {
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
+    padding: 20px; /* Відступи всередині блоку */
+    border-radius: 10px; /* Згладжені кути */
+    margin: 15px auto; /* Відступ між блоками */
+    max-width: 600px; /* Максимальна ширина блоку */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тінь для глибини */
+    text-align: left; /* Вирівнюємо текст по лівому краю */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавність для тіні і руху */
+}
+
+.job:hover {
+    transform: translateY(-5px); /* Піднімаємо блок при наведенні */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Збільшуємо тінь */
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .job {
+        max-width: 90%; /* Блок займає 90% ширини екрана */
+    }
+}
+
+/* Стилі для основного тексту (main) */
+main p {
+    background-color: rgba(255, 255, 255, 0.8); /* Напівпрозорий білий фон */
+    padding: 10px; /* Відступи всередині тексту */
+    border-radius: 5px; /* Згладжені кути */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Легка тінь */
+    margin: 10px 0; /* Відступ зверху і знизу */
+    font-size: 16px; /* Розмір шрифту */
+    line-height: 1.5; /* Робимо текст зручним для читання */
+    transition: background-color 0.3s ease; /* Плавна зміна фону */
+}
+
+main p:hover {
+    background-color: rgba(255, 255, 255, 0.95); /* Робимо фон яскравішим при наведенні */
+}
+
+main h2 {
+    background-color: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон */
+    color: white; /* Білий текст */
+    padding: 15px; /* Збільшуємо внутрішні відступи */
+    border-radius: 8px; /* Робимо кути заголовка ще плавнішими */
+    text-align: center; /* Центруємо текст */
+    margin: 20px auto; /* Центруємо заголовок і додаємо відступи */
+    font-size: 22px; /* Робимо заголовок більшим */
+    font-weight: bold; /* Робимо текст жирним */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Додаємо плавний перехід кольору */
+}
+
+main h2:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Робимо фон темнішим при наведенні */
+    color: #ffcc00; /* Міняємо текст на жовтий при наведенні */
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    main p {
+        font-size: 18px; /* Збільшуємо текст для зручності читання */
+    }
+
+    main h2 {
+        font-size: 20px; /* Трохи зменшуємо заголовок на мобільних */
+    }
+}
+
+/* Стилі для картинки */
+main img {
+    display: block; /* Робимо картинку блочною */
+    margin: 20px auto; /* Центруємо картинку */
+    max-width: 80%; /* Картинка не займає більше 80% ширини сторінки */
+    height: auto; /* Зберігаємо пропорції картинки */
+}
+
+/* Стилі для нижнього колонтитула (footer) */
+footer {
+    text-align: center; /* Вирівнюємо текст */
+    background-color: #333; /* Темний фон */
+    color: white; /* Білий текст */
+    padding: 30px 20px; /* Більший простір у футері */
+    font-size: 16px; /* Збільшуємо розмір тексту */
+    line-height: 1.5; /* Робимо текст більш розрідженим */
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column; /* Елементи розташовуються вертикально */
+    align-items: center; /* Вирівнюємо по центру */
+    gap: 15px; /* Більший відступ між секціями */
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    footer {
+        font-size: 14px; /* Зменшуємо розмір тексту на мобільних */
+    }
+
+    .contacts {
+        flex-direction: column; /* Всі елементи розташовуються у стовпчик */
+        align-items: center; /* Центруємо їх */
+    }
+
+    .social-icons img {
+        width: 35px; /* Зменшуємо іконки на мобільних */
+        height: 35px;
+    }
+}
+
+/* Стилі для контактів */
+.numbers p {
+    margin: 0; /* Забираємо зайві відступи */
+}
+
+.numbers a {
+    color: white; /* Білий текст */
+    text-decoration: none; /* Без підкреслення */
+    font-weight: bold; /* Робимо текст жирним */
+}
+
+.numbers a:hover {
+    text-decoration: underline; /* Підкреслення при наведенні */
+}
+
+/* Стилі для соціальних іконок */
+.social-icons {
+    display: flex; /* Розташування іконок в один рядок */
+    gap: 15px; /* Відступи між іконками */
+}
+
+.social-icons img {
+    width: 40px; /* Розмір іконок */
+    height: 40px; /* Висота іконок */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Плавний ефект */
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Легке збільшення іконок */
+    filter: brightness(1.5); /* Робимо іконки яскравішими */
+}
+
+/* Стилі для форми */
+div {
+    text-align: center; /* Центруємо форму */
+    margin-top: 20px; /* Додаємо відступ зверху */
+}
+
+input[type="text"] {
+    padding: 10px; /* Відступи всередині */
+    font-size: 16px; /* Розмір шрифту */
+    width: 50%; /* Ширина поля введення */
+    margin-right: 10px; /* Відступ між полем і кнопкою */
+}
+
+button {
+    background-color: #007BFF; /* Основний колір кнопки */
+    color: white; /* Білий текст */
+    padding: 12px 20px; /* Відступи всередині кнопки */
+    border: none; /* Без рамки */
+    border-radius: 8px; /* Згладжені кути */
+    cursor: pointer; /* Курсор у вигляді руки */
+    font-size: 16px; /* Розмір тексту */
+    font-weight: bold; /* Жирний текст */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Плавна зміна */
+}
+
+button:hover {
+    background-color: #0056b3; /* Темніший колір при наведенні */
+    transform: scale(1.05); /* Трохи збільшуємо */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Глибша тінь */
+}
+
+button:active {
+    transform: scale(0.95); /* Зменшуємо кнопку, ніби вона вдавлена */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тінь стає меншою */
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    button {
+        font-size: 18px; /* Робимо текст більшим */
+        padding: 14px 24px; /* Додаємо більше відступів */
+    }
+}
+
+/* Стилі для форми */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Більший простір між елементами */
+    max-width: 600px; /* Ширша форма */
+    margin: 0 auto; /* Центруємо форму */
+    background-color: #ffffff; /* Чистий білий фон */
+    padding: 30px; /* Збільшуємо внутрішні відступи */
+    border-radius: 12px; /* Більш плавні кути */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Глибша тінь */
+}
+
+label {
+    font-weight: bold; /* Жирний текст */
+    color: #555; /* Темно-сірий текст */
+}
+
+input, textarea {
+    font-size: 18px; /* Робимо текст більшим */
+    padding: 12px; /* Більші відступи */
+    border: 2px solid #ddd; /* Товстіша рамка */
+    border-radius: 8px; /* Згладжені кути */
+    outline: none; /* Прибираємо стандартне виділення */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Додаємо плавність */
+}
+
+input:hover, textarea:hover {
+    border-color: #aaa; /* Робимо рамку темнішою при наведенні */
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF; /* Синя рамка при активності */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Легка синя тінь */
+}
+
+textarea {
+    resize: vertical; /* Дозволяємо змінювати розмір тільки вертикально */
+}
+
+button {
+    background-color: #28a745; /* Зелений фон */
+    color: white; /* Білий текст */
+    font-size: 18px; /* Робимо текст більшим */
+    font-weight: bold; /* Жирний текст */
+    padding: 15px; /* Збільшуємо відступи */
+    border: none; /* Прибираємо рамку */
+    border-radius: 8px; /* Згладжені кути */
+    cursor: pointer; /* Курсор у вигляді "руки" */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Додаємо плавність */
+}
+
+button:hover {
+    background-color: #218838; /* Темніший зелений при наведенні */
+    transform: scale(1.05); /* Легке збільшення */
+}
+
+button:active {
+    transform: scale(0.95); /* Легке "вдавлення" при натисканні */
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    form {
+        padding: 20px; /* Зменшуємо відступи */
+    }
+
+    input, textarea {
+        font-size: 16px; /* Зменшуємо текст у полях */
+    }
+
+    button {
+        font-size: 16px; /* Зменшуємо текст кнопки */
+        padding: 12px; /* Менші відступи */
+    }
+}
+
+
+    button {
+        width: 100%; /* Кнопка займає всю ширину блоку */
+        text-align: center; /* Вирівнюємо текст усередині кнопки */
+    }
+
+    header h1 {
+        font-size: 24px; /* Зменшуємо розмір заголовка */
+    }
+
+    main h2 {
+        font-size: 20px; /* Зменшуємо заголовки в основному блоці */
+    }
+}
+
+/* Загальний стиль для плаваючих кнопок */
+.floating-button {
+    width: 50px; /* Встановлюємо ширину */
+    height: 50px; /* Встановлюємо висоту */
+    border-radius: 50%; /* Робимо кнопку круглою */
+    position: fixed; /* Фіксуємо положення */
+    background-color: #FF5733; /* Червоний фон */
+    color: white; /* Білий текст */
+    display: flex; /* Використовуємо flex для вирівнювання іконки */
+    align-items: center; /* Вирівнюємо по вертикалі */
+    justify-content: center; /* Вирівнюємо по горизонталі */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тінь для кнопки */
+    text-decoration: none; /* Забираємо підкреслення */
+    font-size: 20px; /* Розмір смайлика */
+    z-index: 1000; /* Робимо кнопку поверх усіх елементів */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Плавний ефект */
+}
+
+.floating-button:hover {
+    transform: scale(1.1); /* Легке збільшення при наведенні */
+    background-color: #C0392B; /* Темніший червоний */
+}
+
+/* Стиль для кнопки "Назад" */
+.back-button {
+    position: fixed; /* Закріплена у верхньому лівому куті */
+    top: 10px; /* Відступ від верхнього краю */
+    left: 10px; /* Відступ від лівого краю */
+    width: 50px; /* Ширина кнопки */
+    height: 50px; /* Висота кнопки */
+    border-radius: 50%; /* Робимо кнопку круглою */
+    background-color: #28A745; /* Зелений фон */
+    color: white; /* Білий текст/іконка */
+    display: flex; /* Використовуємо flex для центрування іконки */
+    align-items: center; /* Вирівнюємо іконку вертикально */
+    justify-content: center; /* Вирівнюємо іконку горизонтально */
+    font-size: 24px; /* Розмір смайлика/іконки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Додаємо тінь */
+    border: 2px solid white; /* Додаємо білий обідок */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Додаємо плавний ефект */
+    z-index: 1000; /* Відображається поверх інших елементів */
+}
+
+.back-button:hover {
+    transform: scale(1.1); /* Легке збільшення при наведенні */
+    background-color: #218838; /* Темніший зелений фон */
+}
+
+/* Стиль для кнопки "Гаряча лінія" */
+.hotline-button {
+    position: fixed; /* Фіксуємо кнопку на екрані */
+    top: 50%; /* Центруємо кнопку по вертикалі */
+    right: 20px; /* Відступ від правого краю */
+    transform: translateY(-50%); /* Вирівнюємо кнопку по центру */
+    width: 50px; /* Робимо ширину однаковою з висотою */
+    height: 50px; /* Висота кнопки */
+    border-radius: 50%; /* Робимо кнопку круглою */
+    background-color: #d95d11; /* Помаранчевий колір */
+    color: white; /* Білий текст */
+    display: flex; /* Використовуємо flex для центрування іконки */
+    align-items: center; /* Вирівнюємо іконку по вертикалі */
+    justify-content: center; /* Вирівнюємо іконку по горизонталі */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тінь для кнопки */
+    font-size: 24px; /* Розмір смайлика */
+    z-index: 1000; /* Робимо кнопку поверх усіх елементів */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Анімація */
+}
+
+.hotline-button:hover {
+    transform: scale(1.1); /* Легке збільшення при наведенні */
+    background-color: #eb5408; /* Темніший помаранчевий */
+}
+
+/* Стиль для блоку вакансій */
+.job {
+    background-color: rgba(255, 255, 255, 0.9); /* Світлий фон */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center; /* Центруємо текст і фото */
+}
+
+/* Стиль для зображень вакансій */
+.job-image {
+    display: block; /* Робимо зображення блочним елементом */
+    margin: 0 auto; /* Центруємо зображення */
+    width: 100%; /* Зображення займає всю ширину блоку */
+    max-width: 400px; /* Максимальна ширина фото */
+    height: auto; /* Зберігаємо пропорції */
+    border-radius: 10px; /* Згладжені кути */
+    margin-bottom: 15px; /* Відступ знизу */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавний ефект */
+}
+
+.job-image:hover {
+    transform: scale(1.05); /* Легке збільшення при наведенні */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Додаємо глибоку тінь */
+}
+
+/* Стиль для блоку кнопок поділитися */
+.share-buttons {
+    display: flex; /* Кнопки в ряд */
+    justify-content: center; /* Вирівнюємо по центру */
+    gap: 15px; /* Більший відступ між кнопками */
+    margin-top: 15px; /* Відступ зверху */
+    flex-wrap: wrap; /* Якщо кнопки не поміщаються, вони переходять на новий рядок */
+}
+
+.share-btn {
+    display: inline-block;
+    background-color: #007BFF; /* Синій фон */
+    color: white; /* Білий текст */
+    padding: 10px 20px; /* Більші відступи */
+    border-radius: 8px; /* Плавні кути */
+    text-decoration: none; /* Прибираємо підкреслення */
+    font-size: 16px; /* Збільшуємо текст */
+    font-weight: bold; /* Робимо текст жирним */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Додаємо плавність */
+}
+
+.share-btn:hover {
+    background-color: #0056b3; /* Темніший синій при наведенні */
+    transform: scale(1.1); /* Легке збільшення кнопки */
+    filter: brightness(1.2); /* Робимо текст трохи яскравішим */
+}
+
+.share-btn.telegram-btn {
+    background-color: #0088CC; /* Фірмовий колір Telegram */
+}
+
+.share-btn.telegram-btn:hover {
+    background-color: #006699; /* Темніший колір при наведенні */
+}
+
+.share-btn.whatsapp-btn {
+    background-color: #25D366; /* Фірмовий колір WhatsApp */
+}
+
+.share-btn.whatsapp-btn:hover {
+    background-color: #1DA851; /* Темніший колір при наведенні */
+}
+
+.share-btn.copy-btn {
+    background-color: #FF5733; /* Яскравий червоний фон */
+}
+
+.share-btn.copy-btn:hover {
+    background-color: #C0392B; /* Темніший червоний при наведенні */
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .share-buttons {
+        flex-direction: column; /* Розташовуємо кнопки у стовпчик */
+        gap: 10px; /* Зменшуємо відступ між кнопками */
+        align-items: center; /* Центруємо кнопки */
+    }
+
+    .share-btn {
+        width: 80%; /* Кнопки займають більшу частину ширини */
+        text-align: center; /* Текст всередині вирівнюється */
+    }
+}
+
+@media (max-width: 768px) {
+    .job {
+        max-width: 90%; /* Блок займає 90% ширини екрану */
+        margin: 10px auto; /* Центруємо блок */
+        padding: 15px; /* Зменшуємо внутрішні відступи */
+    }
+
+    .job-image {
+        max-width: 300px; /* Менший розмір для вузьких екранів */
+        margin-bottom: 10px; /* Зменшуємо відступ */
+    }
+
+    .share-buttons {
+        flex-direction: column; /* Кнопки поділитися розташовуються вертикально */
+        gap: 10px; /* Зменшуємо відстань між кнопками */
+        align-items: center; /* Центруємо кнопки */
+    }
+
+    footer {
+        font-size: 14px; /* Зменшуємо розмір тексту на мобільних */
+    }
+
+    .social-icons img {
+        width: 35px; /* Менший розмір іконок */
+        height: 35px;
+    }
+}
+
+/* Telegram */
+.telegram-btn {
+    background-color: #0088CC;
+}
+
+.telegram-btn:hover {
+    background-color: #006699;
+}
+
+/* WhatsApp */
+.whatsapp-btn {
+    background-color: #25D366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851;
+}
+
+/* Скопіювати */
+.copy-btn {
+    background-color: #FF5733;
+}
+
+.copy-btn:hover {
+    background-color: #C0392B;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #fff;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ul li strong {
+    font-size: 16px;
+    color: #333;
+}
+
+ul li a {
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Загальні стилі для адаптивності */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px; /* Текст трохи більший для комфортного читання */
+    }
+
+    .job {
+        max-width: 90%; /* Блоки вакансій займають більше місця */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Текст стає ще трохи більшим */
+        padding: 10px; /* Зменшуємо відступи з боків */
+    }
+
+    header h1 {
+        font-size: 24px; /* Зменшуємо розмір заголовка */
+        padding: 10px; /* Зменшуємо внутрішні відступи */
+    }
+
+    .job {
+        margin: 10px auto; /* Зменшуємо відстань між блоками */
+        padding: 15px; /* Зменшуємо внутрішні відступи */
+    }
+
+    .job-image {
+        max-width: 100%; /* Зображення займають всю ширину */
+    }
+
+    .share-buttons {
+        flex-direction: column; /* Кнопки поділитися розташовуються вертикально */
+        gap: 10px; /* Зменшуємо відстань між кнопками */
+    }
+
+    footer {
+        font-size: 12px; /* Текст футера стає меншим */
+        padding: 15px; /* Зменшуємо внутрішні відступи */
+    }
+
+    .social-icons img {
+        width: 30px; /* Менший розмір іконок */
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px; /* Ще менший заголовок */
+    }
+
+    .job {
+        padding: 10px; /* Зменшуємо внутрішні відступи ще більше */
+    }
+
+    button {
+        font-size: 14px; /* Зменшуємо текст кнопок */
+        padding: 10px; /* Зменшуємо внутрішні відступи кнопок */
+    }
+
+    .job-image {
+        max-width: 90%; /* Обмежуємо ширину зображень */
+    }
+
+    footer {
+        font-size: 10px; /* Текст футера ще менший */
+    }
+
+    .social-icons img {
+        width: 25px; /* Іконки дуже компактні */
+        height: 25px;
+    }
+}
+
+.language-switcher a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.language-switcher a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.language-switcher a[title="Русский"] {
+    /* Додатковий стиль для кнопки "Русский", якщо потрібно */
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Зварювальник - Slaný</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="language-switcher">
+            <a href="?lang=uk" title="Українська">🇺🇦</a>
+            <a href="?lang=en" title="English">🇬🇧</a>
+            <a href="?lang=cs" title="Čeština">🇨🇿</a>
+            <a href="?lang=ru" title="Русский">🇷🇺</a>
+        </div>
+        <h1 id="job-title">Зварювальник</h1>
+    </header>
+    <main>
+        <img src="../images/welder_slany.jpg" alt="Зварювальник" class="job-image">
+        <p><strong id="location-label">📍 Локація:</strong> <span id="job-location">Slaný</span></p>
+        <p><strong id="salary-label">💰 Зарплата:</strong> <span id="job-salary">Умови обговорюються на співбесіді</span></p>
+        <p><strong id="schedule-label">🕒 Графік роботи:</strong> <span id="job-schedule">8-12 годин на день, 5-6 днів на тиждень, ранні та нічні зміни</span></p>
+        <p><strong id="housing-label">🏠 Проживання:</strong> <span id="job-housing">166 крон/ніч. Хороші умови: кімнати на 2-3 людини, пари живуть окремо. Вайфай, холодильник, пральна машина.</span></p>
+        <p><strong id="extras-label">🎯 Додаткові умови:</strong></p>
+        <ul id="extras-list">
+            <li id="extra-item-1">3 комплекта робочого одягу</li>
+            <li id="extra-item-2">Аванси щотижня — 1000 крон</li>
+            <li id="extra-item-3">Вакансія безкоштовна</li>
+            <li id="extra-item-4">За житло віднімається із зарплати</li>
+            <li id="extra-item-5">Зарплата виплачується з 15 по 25 число наступного місяця</li>
+        </ul>
+        <button onclick="location.href='../forms/apply.html?vacancy=Зварювальник - Slaný&lang=uk'" id="apply-button">Відгукнутися</button>
+    </main>
+    <footer id="contacts">
+        <p>&copy; 2025 Робота в Чехії</p>
+        <div class="contacts">
+            <div class="numbers">
+                <p><a href="tel:+420777775282">+420 777 775 282 (Олександр)</a></p>
+                <p><a href="tel:+420725897777">+420 725 897 777 (Kolja)</a></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://t.me/Alex19283" target="_blank">
+                    <img src="../images/telegram-icon.png" alt="Telegram">
+                </a>
+                <a href="viber://chat?number=+420777775282" target="_blank">
+                    <img src="../images/viber-icon.png" alt="Viber">
+                </a>
+                <a href="https://wa.me/420777775282" target="_blank">
+                    <img src="../images/whatsapp-icon.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Назад" -->
+    <a href="../index.html?lang=uk" class="floating-button back-button">⬅️</a>
+
+    <!-- Кнопка "Гаряча лінія" -->
+    <a href="#contacts" class="floating-button hotline-button">📞</a>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang') || 'uk';
+
+        const translations = {
+            uk: {
+                title: 'Зварювальник - Slaný',
+                jobTitle: 'Зварювальник',
+                locationLabel: '📍 Локація:',
+                jobLocation: 'Slaný',
+                salaryLabel: '💰 Зарплата:',
+                jobSalary: 'Умови обговорюються на співбесіді',
+                scheduleLabel: '🕒 Графік роботи:',
+                jobSchedule: '8-12 годин на день, 5-6 днів на тиждень, ранні та нічні зміни',
+                housingLabel: '🏠 Проживання:',
+                jobHousing: '166 крон/ніч. Хороші умови: кімнати на 2-3 людини, пари живуть окремо. Вайфай, холодильник, пральна машина.',
+                extrasLabel: '🎯 Додаткові умови:',
+                extras: [
+                    '3 комплекта робочого одягу',
+                    'Аванси щотижня — 1000 крон',
+                    'Вакансія безкоштовна',
+                    'За житло віднімається із зарплати',
+                    'Зарплата виплачується з 15 по 25 число наступного місяця'
+                ],
+                applyButton: 'Відгукнутися'
+            },
+            en: {
+                title: 'Welder - Slaný',
+                jobTitle: 'Welder',
+                locationLabel: '📍 Location:',
+                jobLocation: 'Slaný',
+                salaryLabel: '💰 Salary:',
+                jobSalary: 'Conditions are discussed during the interview',
+                scheduleLabel: '🕒 Work Schedule:',
+                jobSchedule: '8-12 hours a day, 5-6 days a week, early and night shifts',
+                housingLabel: '🏠 Accommodation:',
+                jobHousing: '166 CZK/night. Good conditions: rooms for 2-3 people, couples live separately. Wi-Fi, fridge, washing machine.',
+                extrasLabel: '🎯 Additional Conditions:',
+                extras: [
+                    '3 sets of work clothes',
+                    'Weekly advances — 1000 CZK',
+                    'Free job offer',
+                    'Housing costs are deducted from the salary',
+                    'Salary is paid from the 15th to the 25th of the following month'
+                ],
+                applyButton: 'Apply'
+            },
+            cs: {
+                title: 'Svářeč - Slaný',
+                jobTitle: 'Svářeč',
+                locationLabel: '📍 Lokalita:',
+                jobLocation: 'Slaný',
+                salaryLabel: '💰 Mzda:',
+                jobSalary: 'Podmínky se projednávají během pohovoru',
+                scheduleLabel: '🕒 Pracovní plán:',
+                jobSchedule: '8-12 hodin denně, 5-6 dní v týdnu, ranní a noční směny',
+                housingLabel: '🏠 Ubytování:',
+                jobHousing: '166 CZK/noc. Dobré podmínky: pokoje pro 2-3 osoby, páry bydlí odděleně. Wi-Fi, lednička, pračka.',
+                extrasLabel: '🎯 Další podmínky:',
+                extras: [
+                    '3 sady pracovního oblečení',
+                    'Týdenní zálohy — 1000 Kč',
+                    'Nabídka práce zdarma',
+                    'Náklady na bydlení se odečítají ze mzdy',
+                    'Mzda je vyplácena od 15. do 25. dne následujícího měsíce'
+                ],
+                applyButton: 'Přihlásит се'
+            },
+            ru: {
+                title: 'Сварщик - Slaný',
+                jobTitle: 'Сварщик',
+                locationLabel: '📍 Локация:',
+                jobLocation: 'Slaný',
+                salaryLabel: '💰 Зарплата:',
+                jobSalary: 'Условия обсуждаются на собеседовании',
+                scheduleLabel: '🕒 График работы:',
+                jobSchedule: '8-12 часов в день, 5-6 дней в неделю, дневные и ночные смены',
+                housingLabel: '🏠 Проживание:',
+                jobHousing: '166 крон/ночь. Хорошие условия: комнаты на 2-3 человека, пары живут отдельно. Wi-Fi, холодильник, стиральная машина.',
+                extrasLabel: '🎯 Дополнительные условия:',
+                extras: [
+                    '3 комплекта рабочей одежды',
+                    'Авансы еженедельно — 1000 крон',
+                    'Бесплатная вакансия',
+                    'Проживание оплачивается из зарплаты',
+                    'Зарплата выплачивается с 15 по 25 число следующего месяца'
+                ],
+                applyButton: 'Откликнуться'
+            }
+        };
+
+        const t = translations[lang];
+        document.title = t.title;
+        document.getElementById('job-title').textContent = t.jobTitle;
+        document.getElementById('location-label').textContent = t.locationLabel;
+        document.getElementById('job-location').textContent = t.jobLocation;
+        document.getElementById('salary-label').textContent = t.salaryLabel;
+        document.getElementById('job-salary').textContent = t.jobSalary;
+        document.getElementById('schedule-label').textContent = t.scheduleLabel;
+        document.getElementById('job-schedule').textContent = t.jobSchedule;
+        document.getElementById('housing-label').textContent = t.housingLabel;
+        document.getElementById('job-housing').textContent = t.jobHousing;
+        document.getElementById('extras-label').textContent = t.extrasLabel;
+        t.extras.forEach((item, index) => {
+            document.getElementById(`extra-item-${index + 1}`).textContent = item;
+        });
+        document.getElementById('apply-button').textContent = t.applyButton;
+    </script>
+</body>
+</html>

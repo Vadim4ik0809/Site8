@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Відгук на вакансію</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="language-switcher">
+<a href="?lang=uk" title="Українська">🇺🇦</a>
+<a href="?lang=en" title="English">🇬🇧</a>
+<a href="?lang=cs" title="Čeština">🇨🇿</a>
+<a href="?lang=ru" title="Русский">🇷🇺</a>
+        </div>
+        <h1 id="form-header">Відгук на вакансію</h1>
+    </header>
+    <main>
+        <p><strong id="vacancy-title">Назва вакансії:</strong> <span id="vacancy-name"></span></p>
+        <input type="hidden" id="vacancy" name="vacancy" value="">
+        <p><strong id="vacancy-location-label">Локація:</strong> <span id="vacancy-location">Hranice</span></p>
+        <form onsubmit="sendToTelegram(event)">
+            <label for="name" id="label-name">Ім'я:</label>
+            <input type="text" id="name" name="name" placeholder="Введіть ваше ім'я" required>
+
+            <label for="surname" id="label-surname">Прізвище:</label>
+            <input type="text" id="surname" name="surname" placeholder="Введіть ваше прізвище" required>
+
+            <label for="birthdate" id="label-birthdate">Дата народження:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label for="phone" id="label-phone">Номер телефону:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+420123456789" required>
+
+            <label for="email" id="label-email">Ваш email:</label>
+            <input type="email" id="email" name="email" placeholder="Введіть ваш email" required>
+
+            <label for="experience" id="label-experience">Чи є досвід роботи?</label>
+            <select id="experience" name="experience">
+                <option value="no_experience" id="option-no-experience">Немає</option>
+                <option value="less_than_year" id="option-less-than-year">Менше року</option>
+                <option value="1-2_years" id="option-1-2-years">1-2 роки</option>
+                <option value="more_than_2_years" id="option-more-than-2-years">Більше 2 років</option>
+            </select>
+
+            <label for="housing" id="label-housing">Чи потрібне житло?</label>
+            <select id="housing" name="housing">
+                <option value="yes" id="option-housing-yes">Так</option>
+                <option value="no" id="option-housing-no">Ні</option>
+            </select>
+
+            <label for="license" id="label-license">Чи є водійські права?</label>
+            <select id="license" name="license">
+                <option value="yes" id="option-license-yes">Так</option>
+                <option value="no" id="option-license-no">Ні</option>
+            </select>
+
+            <label for="abroad_experience" id="label-abroad-experience">Чи є досвід роботи за кордоном?</label>
+            <select id="abroad_experience" name="abroad_experience">
+                <option value="yes" id="option-abroad-yes">Так</option>
+                <option value="no" id="option-abroad-no">Ні</option>
+            </select>
+
+            <label for="documents" id="label-documents">Які у вас документи?</label>
+            <select id="documents" name="documents" multiple>
+                <option value="czech_visa" id="option-czech-visa">Чеська віза</option>
+                <option value="polish_visa" id="option-polish-visa">Польська віза</option>
+                <option value="eu_work_visa" id="option-eu-work-visa">Робочі візи Євросоюзу</option>
+                <option value="czech_work_card" id="option-czech-work-card">Чеська робоча карта (2 роки)</option>
+                <option value="eu_passport" id="option-eu-passport">Паспорт Євросоюзу</option>
+                <option value="slovak_card" id="option-slovak-card">Словацька карта</option>
+                <option value="czech_residence" id="option-czech-residence">ПМЖ у Чехії</option>
+            </select>
+
+            <label for="czech_language" id="label-czech-language">Чи знаєте чеську мову?</label>
+            <select id="czech_language" name="czech_language">
+                <option value="yes" id="option-czech-yes">Так</option>
+                <option value="no" id="option-czech-no">Ні</option>
+                <option value="understand_but_not_speak" id="option-czech-understand">Розумію, але не розмовляю</option>
+            </select>
+
+            <label for="other_languages" id="label-other-languages">Які інші мови ви знаєте?</label>
+            <input type="text" id="other_languages" name="other_languages" placeholder="Напишіть мови">
+
+            <label for="comment" id="label-comment">Коментар:</label>
+            <textarea id="comment" name="comment" rows="4" placeholder="Напишіть щось про себе"></textarea>
+
+            <button type="submit" id="submit-button">Надіслати</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Робота в Чехії</p>
+    </footer>
+    <script>
+        // Зчитуємо параметри з URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const vacancy = urlParams.get('vacancy') || 'Електрик'; // Значення за замовчуванням
+
+        // Вставляємо назву вакансії у текст на сторінці
+        document.getElementById('vacancy-name').textContent = vacancy;
+
+        // Вставляємо назву вакансії у приховане поле форми
+        document.getElementById('vacancy').value = vacancy;
+
+        const lang = urlParams.get('lang') || 'uk';
+
+        const translations = {
+            uk: {
+                title: 'Відгук на вакансію',
+                formHeader: 'Відгук на вакансію',
+                vacancyTitle: 'Назва вакансії:',
+                vacancyName: 'Електрик',
+                locationLabel: 'Локація:',
+                location: 'Hranice',
+                name: 'Ім\'я:',
+                surname: 'Прізвище:',
+                birthdate: 'Дата народження:',
+                phone: 'Номер телефону:',
+                email: 'Ваш email:',
+                placeholderEmail: 'Введіть ваш email',
+                placeholderLanguages: 'Напишіть мови',
+                placeholderComment: 'Напишіть щось про себе',
+                no_experience: 'Немає',
+                less_than_year: 'Менше року',
+                '1-2_years': '1-2 роки',
+                more_than_2_years: 'Більше 2 років',
+                yes: 'Так',
+                no: 'Ні',
+                understand_but_not_speak: 'Розумію, але не розмовляю',
+                submit: 'Надіслати'
+            },
+            en: {
+                title: 'Job Application',
+                formHeader: 'Job Application',
+                vacancyTitle: 'Job Title:',
+                vacancyName: 'Electrician',
+                locationLabel: 'Location:',
+                location: 'Hranice',
+                name: 'Name:',
+                surname: 'Surname:',
+                birthdate: 'Birthdate:',
+                phone: 'Phone:',
+                email: 'Your email:',
+                placeholderEmail: 'Enter your email',
+                placeholderLanguages: 'Write languages',
+                placeholderComment: 'Write something about yourself',
+                no_experience: 'No experience',
+                less_than_year: 'Less than a year',
+                '1-2_years': '1-2 years',
+                more_than_2_years: 'More than 2 years',
+                yes: 'Yes',
+                no: 'No',
+                understand_but_not_speak: 'Understand but do not speak',
+                submit: 'Submit'
+            }
+        };
+
+        const t = translations[lang];
+
+        document.title = t.title;
+        document.getElementById('form-header').textContent = t.formHeader;
+        document.getElementById('vacancy-title').textContent = t.vacancyTitle;
+        document.getElementById('vacancy-location-label').textContent = t.locationLabel;
+        document.getElementById('label-name').textContent = t.name;
+        document.getElementById('label-surname').textContent = t.surname;
+        document.getElementById('label-birthdate').textContent = t.birthdate;
+        document.getElementById('label-phone').textContent = t.phone;
+        document.getElementById('label-email').textContent = t.email;
+        document.getElementById('submit-button').textContent = t.submit;
+
+        // Оновлення placeholder
+        document.getElementById('email').placeholder = t.placeholderEmail;
+        document.getElementById('other_languages').placeholder = t.placeholderLanguages;
+        document.getElementById('comment').placeholder = t.placeholderComment;
+
+        // Оновлення варіантів select
+        const options = [
+            { id: 'option-no-experience', key: 'no_experience' },
+            { id: 'option-less-than-year', key: 'less_than_year' },
+            { id: 'option-1-2-years', key: '1-2_years' },
+            { id: 'option-more-than-2-years', key: 'more_than_2_years' },
+            { id: 'option-housing-yes', key: 'yes' },
+            { id: 'option-housing-no', key: 'no' },
+            { id: 'option-license-yes', key: 'yes' },
+            { id: 'option-license-no', key: 'no' },
+            { id: 'option-abroad-yes', key: 'yes' },
+            { id: 'option-abroad-no', key: 'no' },
+            { id: 'option-czech-yes', key: 'yes' },
+            { id: 'option-czech-no', key: 'no' },
+            { id: 'option-czech-understand', key: 'understand_but_not_speak' }
+        ];
+
+        options.forEach(option => {
+            const element = document.getElementById(option.id);
+            if (element) {
+                element.textContent = t[option.key];
+        }
+        });
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>
